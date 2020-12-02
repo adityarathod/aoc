@@ -12,7 +12,7 @@ class Solution:
         min_c, max_c, c, password = password_tuple
         min_c, max_c = int(min_c), int(max_c)
         c_count = password.count(c)
-        return c_count >= min_c and c_count <= max_c
+        return min_c <= c_count <= max_c
 
     def part_one(self):
         return len(list(filter(Solution.validate_p1, self.input)))
