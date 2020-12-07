@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+echo https://adventofcode.com/2020/day/${1}/input
+echo -n "Status: "
+COOKIE=`cat .cookie`
+curl -s -H "cookie: session=${COOKIE}" https://adventofcode.com/2020/day/${1}/input --output 2020/day${1}.txt --write-out %{http_code}
+echo "\nInput sample:"
+head -n 10 2020/day${1}.txt
+code 2020/day${1}.txt
